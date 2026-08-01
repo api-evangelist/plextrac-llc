@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+type: Webhooks
+source: https://docs.plextrac.com/
+summary: >-
+  PlexTrac supports outbound webhooks that POST event payloads to a customer-configured
+  endpoint. Webhook deliveries use a 5-second timeout and are retried up to 5 times on
+  failure. Webhooks are configured in Tenant Management and let external systems react
+  to activity in PlexTrac (for example finding or report changes) to drive downstream
+  automation and remediation workflows.
+delivery:
+  transport: https
+  method: POST
+  timeout_seconds: 5
+  max_retries: 5
+events:
+- note: >-
+    PlexTrac documents a webhook subscription surface but does not publish a machine-readable
+    AsyncAPI document or a fixed public event-type catalog; specific event types are configured
+    per tenant. No fabricated event list is recorded here.
+spec_available: false

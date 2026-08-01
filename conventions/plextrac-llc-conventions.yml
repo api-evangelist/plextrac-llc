@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.plextrac.com/
+summary: >-
+  Cross-cutting request/response conventions for the PlexTrac REST API, captured from
+  the public documentation. PlexTrac is a JWT-bearer, versioned (v1/v2) REST API scoped
+  by client and tenant identifiers.
+authentication:
+  style: jwt-bearer
+  header: 'Authorization: Bearer <jwt>'
+  token_endpoint: /api/v1/authenticate
+  token_lifetime_minutes: 15
+  ref: authentication/plextrac-llc-authentication.yml
+versioning:
+  scheme: uri-path
+  versions:
+  - v1
+  - v2
+  current: v2
+  note: v2 endpoints are the current surface; several v1 endpoints are documented as deprecated.
+  ref: lifecycle/plextrac-llc-lifecycle.yml
+resource_scoping:
+  note: >-
+    Most endpoints are scoped by path identifiers - clientId (a.k.a. clientID), reportId,
+    tenantId, roleId, userId - reflecting PlexTrac's multi-tenant, per-client data model.
+rate_limiting:
+  authenticate_per_minute: 10
+  note: The authenticate endpoint is limited to 10 requests per minute; general per-endpoint
+    limits are not published.
+idempotency:
+  supported: false
+  note: PlexTrac does not document an idempotency-key mechanism.
+pagination:
+  note: Pagination parameters are not documented in a single public reference; not asserted here.
+webhooks:
+  supported: true
+  ref: asyncapi/plextrac-llc-webhooks.yml
+errors:
+  note: A public RFC 9457 problem+json error catalog is not published; error envelope not asserted.

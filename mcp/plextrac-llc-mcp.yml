@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: https://docs.plextrac.com/
+note: >-
+  No official hosted or published PlexTrac MCP server was found. This is a candidate tool
+  list derived from documented REST endpoint groups, provided as a starting point for an
+  MCP wrapper. Tools are not verified against a machine-readable OpenAPI spec (none is
+  published); operationIds are illustrative, not authoritative.
+server:
+  name: plextrac
+  transport: http
+auth:
+  type: jwt-bearer
+  token_endpoint: /api/v1/authenticate
+tools:
+- name: authenticate
+  description: Exchange credentials for a JWT bearer token.
+  source_operation: POST /api/v1/authenticate
+- name: list_client_findings
+  description: List findings for a client.
+  source_operation: POST /api/v2/client/{clientId}/findings
+- name: create_report_finding
+  description: Create a finding on a report.
+  source_operation: POST /api/v2/clients/{clientId}/reports/{reportId}/findings
+- name: import_client_assets
+  description: Import assets for a client from a source.
+  source_operation: POST /api/v2/client/{clientId}/assets/import/{source}
+- name: create_writeup_template
+  description: Create a content-library writeup/template.
+  source_operation: POST /api/v1/template/create
+- name: get_tenant_role
+  description: Retrieve an RBAC role for a tenant.
+  source_operation: GET /api/v2/tenants/{tenantId}/security/role/{roleId}
+- name: set_role_permissions
+  description: Update the permissions on a tenant role.
+  source_operation: PUT /api/v2/tenants/{tenantId}/security/role/{roleId}/permissions

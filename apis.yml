@@ -1,8 +1,27 @@
 aid: plextrac-llc
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/plextrac-llc.png
 name: PlexTrac, LLC
-description: 'PlexTrac, LLC is a company surfaced as a portfolio company of insight-partners and added
-  to the API Evangelist network as a stub for enrichment. Sector: cybersecurity. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: 'PlexTrac is a penetration test reporting and proactive exposure management
+  platform that unifies offensive security data from pentests, vulnerability scanners,
+  and bug bounty programs into a single system of record. It automates pentest report
+  authoring (including AI-assisted findings), centralizes and prioritizes vulnerability
+  data by business impact, and drives remediation through workflows integrated with
+  tools such as Jira and ServiceNow. PlexTrac exposes a JWT-authenticated REST API
+  (v1 and v2) for managing clients, reports, findings, assets, and content-library
+  writeups, plus RBAC/tenant administration and outbound webhooks, letting security
+  teams and MSSPs integrate reporting and remediation into their own pipelines.'
 url: https://raw.githubusercontent.com/api-evangelist/plextrac-llc/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,16 +31,81 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Cybersecurity
-apis: []
+- Penetration Testing
+- Vulnerability Management
+- Security Reporting
+- Exposure Management
+- Offensive Security
+- MSSP
+- Remediation
+apis:
+- name: PlexTrac API
+  description: 'PlexTrac''s JWT-authenticated REST API (v1 and v2) for managing clients,
+    reports, findings, assets, and content-library writeups, along with tenant/RBAC
+    administration and outbound webhooks. The base URL is the customer''s own PlexTrac
+    instance (the multi-tenant SaaS instance is app.plextrac.com); authentication is
+    a bearer JWT obtained from POST /api/v1/authenticate with a 15-minute expiry.'
+  humanURL: https://api-docs.plextrac.com/
+  baseURL: https://app.plextrac.com/api/v1
+  tags:
+  - Penetration Testing
+  - Vulnerability Management
+  - Security Reporting
+  properties:
+  - type: Authentication
+    url: authentication/plextrac-llc-authentication.yml
+  - type: Webhooks
+    url: asyncapi/plextrac-llc-webhooks.yml
+  - type: Conventions
+    url: conventions/plextrac-llc-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/plextrac-llc-lifecycle.yml
+  - type: Deprecation
+    url: lifecycle/plextrac-llc-lifecycle.yml
+  - type: Conformance
+    url: conformance/plextrac-llc-conformance.yml
+  - type: MCPServer
+    url: mcp/plextrac-llc-mcp.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/plextrac-llc-trust-center.yml
+- type: Compliance
+  url: https://app.drata.com/trust/9cbbf37d-0c38-11ee-865f-029d78a187d9
+- type: VulnerabilityDisclosure
+  url: security/plextrac-llc-vulnerability-disclosure.yml
+- type: Security
+  url: https://plextrac.com/vulnerability-disclosure/
+- type: DomainSecurity
+  url: security/plextrac-llc-domain-security.yml
 - type: Website
   url: https://plextrac.com/
+- type: Documentation
+  url: https://docs.plextrac.com/
+- type: APIReference
+  url: https://api-docs.plextrac.com/
+- type: Support
+  url: https://helpcenter.plextrac.com/
+- type: Blog
+  url: https://plextrac.com/resources/blog/
+- type: Pricing
+  url: https://plextrac.com/pricing/
+- type: TermsOfService
+  url: https://plextrac.com/terms-of-use/
+- type: PrivacyPolicy
+  url: https://plextrac.com/privacy-policy/
+- type: LLMsTxt
+  url: llms/plextrac-llc-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1

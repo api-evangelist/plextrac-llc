@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.plextrac.com/
+versioning:
+  scheme: uri-path
+  versions:
+  - v1
+  - v2
+  current: v2
+  docs: https://api-docs.plextrac.com/
+deprecation:
+  policy: >-
+    PlexTrac maintains parallel v1 and v2 API surfaces and documents specific v1 endpoints
+    as deprecated in favor of v2 equivalents (for example v1 findings, assets retrieval,
+    and content-library copy endpoints are marked deprecated with v2 or template replacements).
+  documented_deprecated_endpoints:
+  - GET /api/v1/clients/findings
+  - GET /api/v1/clients/analytics/export
+  - GET /api/v1/client/{clientID}/topFlaws
+  - POST /api/v1/clients/topFlaws
+  - GET /api/v1/client/{clientID}/assets
+  - POST /api/v1/client/{clientId}/assets/import/{source}
+  - POST /api/v2/repositories/copyFlawToWriteupsRepository
+  docs: https://docs.plextrac.com/
+sla:
+  note: A public SLA / uptime target is not published for the SaaS instance.
+status_page:
+  note: No public status page was located during this pass.
