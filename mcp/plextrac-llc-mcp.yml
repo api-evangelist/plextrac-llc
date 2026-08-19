@@ -2,11 +2,10 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: https://docs.plextrac.com/
-note: >-
-  No official hosted or published PlexTrac MCP server was found. This is a candidate tool
-  list derived from documented REST endpoint groups, provided as a starting point for an
-  MCP wrapper. Tools are not verified against a machine-readable OpenAPI spec (none is
-  published); operationIds are illustrative, not authoritative.
+note: No official hosted or published PlexTrac MCP server was found. This is a candidate tool list derived
+  from documented REST endpoint groups, provided as a starting point for an MCP wrapper. Tools are not
+  verified against a machine-readable OpenAPI spec (none is published); operationIds are illustrative,
+  not authoritative.
 server:
   name: plextrac
   transport: http
@@ -35,3 +34,9 @@ tools:
 - name: set_role_permissions
   description: Update the permissions on a tenant role.
   source_operation: PUT /api/v2/tenants/{tenantId}/security/role/{roleId}/permissions
+deployment:
+  mode: none
+  verified: derived
+  tools: 7
+  checked: '2026-08-12'
+  source: catalog MCP census
