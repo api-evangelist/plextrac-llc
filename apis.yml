@@ -24,7 +24,7 @@ accessModel:
   generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/plextrac-llc.png
-name: PlexTrac, LLC
+name: PlexTrac
 description: 'PlexTrac is a penetration test reporting and proactive exposure management
   platform that unifies offensive security data from pentests, vulnerability scanners,
   and bug bounty programs into a single system of record. It automates pentest report
@@ -122,3 +122,4 @@ x-enrichment:
   status: enriched
   artifacts_added: 11
   pass: local-v1
+x-legal-name: PlexTrac, LLC
