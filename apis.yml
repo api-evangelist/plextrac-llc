@@ -43,7 +43,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-10-06'
 tags:
 - Company
 - Cybersecurity
@@ -89,6 +89,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://plextrac.com/feed/
+  type: BlogRSS
 - type: TrustCenter
   url: security/plextrac-llc-trust-center.yml
 - type: Compliance
